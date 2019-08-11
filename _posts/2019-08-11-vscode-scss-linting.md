@@ -9,10 +9,9 @@ Well shit...my first "serious" problem with this experiment.
 
 I love Visual Studio Code, I use it every day for nearly all programming/text related activity.  I figured it'd be a no-brainer to use for this blog experiment - and so far that's been correct.  BUT! I ran into this minor problem.
 
-Enter [jekyll/jekyll#3408](https://github.com/jekyll/jekyll/issues/3408).
+<!--more-->
 
-![ugh]({{ site.baseurl }}/images/Screenshot 2019-08-11 at 12.15.28.png)
-*Ugh - Linting please...*
+Enter [jekyll/jekyll#3408](https://github.com/jekyll/jekyll/issues/3408).
 
 So per https://jekyllrb.com/docs/assets/
 
@@ -26,6 +25,9 @@ So per https://jekyllrb.com/docs/assets/
 .my-definition
   font-size: 1.2em
 ```
+
+![ugh]({{ site.baseurl }}/images/Screenshot 2019-08-11 at 12.15.28.png)
+*Ugh - Linting please...*
 
 The linter catches this syntax as an error!  After much googling, I couldn't find a real solution, so I had to disable linting for `scss`...not ideal.
 

@@ -7,6 +7,8 @@ tags: hello-world jekyll github-pages web
 
 I did it! Welcome to my first post on my new blog.  I'm using [GitHub Pages](https://pages.github.com/) (and [Jekyll](https://jekyllrb.com/)) to give this a shot.
 
+<!--more-->
+
   <p align="center">
     <img src="{{ site.baseurl }}/images/helloworld-new.svg">
   </p>
