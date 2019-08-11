@@ -7,9 +7,9 @@ tags: hello-world jekyll github-pages web
 
 I did it! Welcome to my first post on my new blog.  I'm using [GitHub Pages](https://pages.github.com/) (and [Jekyll](https://jekyllrb.com/)) to give this a shot.
 
-<p align="center">
-  <img width="460" height="300" src="{{ site.baseurl }}/images/helloworld.svg">
-</p>
+  <p align="center">
+    <img src="{{ site.baseurl }}/images/helloworld-new.svg">
+  </p>
 
 :+1: It's working great so far. Writing markdown and generating static pages seems so much nicer, simpler, and easier than heavy JavaScript solutions. Plus I don't have to deal with something like [this](https://www.google.com/search?q=javascript+fatigue)!
 
