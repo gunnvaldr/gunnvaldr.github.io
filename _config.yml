@@ -17,6 +17,7 @@ avatar: https://avatars1.githubusercontent.com/u/52542209?s=460&v=4
 # Flags below are optional
 #
 
+excerpt_separator: "<!--more-->"
 parse_block_html: true
 
 # Includes an icon in the footer for each username you enter
