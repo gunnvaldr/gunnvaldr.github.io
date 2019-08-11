@@ -5,6 +5,7 @@
 # Name of your site (displayed in the header)
 name: Gunnvaldr
 title: Gunnvaldr
+timezone: US/Central
 
 # Short bio or description (displayed in the header)
 description: Random thoughts and musings
