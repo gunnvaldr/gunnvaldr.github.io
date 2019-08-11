@@ -116,6 +116,35 @@ img + em {
   text-align: center;
 }
 
+iframe {
+  display: block;
+  margin: auto;
+}
+
+.blkimg {
+  display: block;
+}
+
+.card-1 {
+  background: #fff;
+  border-radius: 2px;
+  display: inline-block;
+  height: auto;
+  margin: 0.5rem;
+  position: static;
+  width: auto;
+  vertical-align: bottom;
+}
+
+.card-2 {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.12), 0 2px 3px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.card-2:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
 .snippet {
   position: relative;
   overflow: visible
@@ -415,3 +444,10 @@ hr {
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
 @import "svg-icons";
+
+@media (min-height: 600px) {div.wrapper-masthead {
+  background: inherit;
+  position: sticky;
+  top: 0;
+}
+}
