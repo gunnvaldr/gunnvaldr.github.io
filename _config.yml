@@ -2,4 +2,3 @@ theme: jekyll-theme-cayman
 title: Welcome
 name: Gunnvaldr Pope
 description: Words go here
-permalink: /blog/:year/:month/:day/:title
