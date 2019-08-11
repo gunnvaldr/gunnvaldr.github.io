@@ -4,12 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+I'm just a newbie developer playing with things.  I occasionally post about them here.
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+I love Python, and am learning webdev-based things like CSS.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[me@gunnvaldr.me](mailto:me@gunnvaldr.me)
