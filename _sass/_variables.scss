@@ -15,9 +15,9 @@ $lightGray: #eee;
 $white: #fff;
 
 // Font stacks
-$helvetica: Helvetica, Arial, sans-serif;
-$helveticaNeue: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$georgia: Georgia, serif;
+$helvetica: "PT Serif", Helvetica, Arial, sans-serif;
+$helveticaNeue: "PT Sans", Helvetica, Arial, sans-serif;
+$georgia: "PT Serif", Georgia, serif;
 
 // Mobile breakpoints
 @mixin mobile {
