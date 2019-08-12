@@ -13,14 +13,67 @@
 /* BASE RULES */
 /**************/
 
-html {
+/**
+/* Night/Day Mode
+/* credit https://derekkedziora.com/blog/dark-mode
+**/
+
+html,html[data-theme=light] {
   font-size: 100%;
+  --box-background-color:hsl(0, 0%, 90%);
+  --highlight-color:hsl(0, 0%, 80%);
+  --light-border-color:hsl(0, 0%, 80%);
+  --light-text-color:hsl(0, 0%, 35%);
+  --link-color:hsl(200, 81%, 35%);
+  --link-color-visited:hsl(250, 100%, 37%);
+  --main-background-color:hsl(0, 5%, 95%);
+  --main-text-color:hsl(0, 0%, 0%);
+  --sidebar-color:hsl(0, 0%, 90%);
+  --underline-color:hsl(0, 0%, 60%);
+  --second-border-color: hsl(0, 0%, 80%);
+}
+
+html[data-theme=dark] {
+  --box-background-color:hsl(0, 0%, 20%);
+  --highlight-color:hsl(0, 0%, 60%);
+  --light-border-color:hsl(0, 0%, 30%);
+  --light-text-color:hsl(0, 0%, 60%);
+  --link-color:hsl(200, 81%, 60%);
+  --link-color-visited:hsl(250, 100%, 60%);
+  --main-background-color:hsl(0, 0%, 10%);
+  --main-text-color:hsl(0, 10%, 80%);
+  --underline-color:hsl(0, 0%, 50%);
+  --second-border-color: hsl(0, 0%, 30%);
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    content: "dark";
+  }
+}
+
+.theme-switcher {
+  background-color: var(--main-background-color);
+  border: none;
+  color: var(--light-text-color);
+  font-family: "PT Sans",Helvetia,Arial,sans-serif;
+  font-size: .7em;
+  letter-spacing: .05em;
+  margin-top: 2em;
+  margin-left: 2em;
+  text-transform: uppercase
+}
+
+.theme-switcher:focus {
+  outline: none;
 }
 
 body {
-	background: $white;
+  background-color: var(--main-background-color);
+  color: var(--main-text-color);
   font: 18px/1.4 $helvetica;
-  color: $darkGray;
+  // background: $white;
+  // color: $darkGray;
 }
 
 .container {
@@ -32,7 +85,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $helveticaNeue;
-  color: $darkerGray;
+  color: var(--main-text-color);
   font-weight: bold;
 
   line-height: 1.5;
@@ -61,7 +114,7 @@ h3 {
 
 h4 {
   font-size: 18px;
-  color: $gray;
+  color: var(--main-text-color);
 }
 
 p {
@@ -69,7 +122,7 @@ p {
 }
 
 a {
-  color: $blue;
+  color: var(--link-color);
   text-decoration: none;
 	cursor: pointer;
   &:hover, &:active {
@@ -95,7 +148,7 @@ ol ul, ul ol, ul ul, ol ol {
 }
 
 ul ul, ol ul {
-  list-style-type: circle;
+  list-style-type: square;
 }
 
 em, i {
@@ -139,7 +192,7 @@ iframe {
 }
 
 .card-1 {
-  background: #fff;
+  background: transparent;
   border-radius: 2px;
   display: inline-block;
   height: auto;
@@ -191,17 +244,17 @@ iframe {
 .date {
   font-style: italic;
   font-size: 14px;
-  color: $gray;
+  color: var(--light-text-color);
 }
 
 // Specify the color of the selection
 ::-moz-selection {
-  color: $black;
-  background: $lightGray;
+  color: var(--main-text-color);
+  background: var(--highlight-color);
 }
 ::selection {
-  color: $black;
-  background: $lightGray;
+  color: var(--main-text-color);
+  background: var(--highlight-color);
 }
 
 // Nicolas Gallagher's micro clearfix hack
@@ -230,7 +283,7 @@ iframe {
 
 .masthead {
   padding: 20px 0;
-  border-bottom: 1px solid $lightGray;
+  border-bottom: 1px solid var(--light-border-color);
 
   @include mobile {
     text-align: center;
@@ -266,7 +319,7 @@ iframe {
 
 .site-name {
   margin: 0;
-  color: $darkGray;
+  color: var(--main-text-color);
   cursor: pointer;
   font-family: $helveticaNeue;
   font-weight: bold;
@@ -276,7 +329,7 @@ iframe {
 
 .site-description {
   margin: -5px 0px 0px 3px;
-  color: $gray;
+  color: var(--main-text-color);
   font-size: 14px;
 
   @include mobile {
@@ -299,14 +352,14 @@ nav {
 
   a {
     margin-left: 20px;
-    color: $darkGray;
+    color: var(--main-text-color);
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
 
     @include mobile {
       margin: 0 10px;
-      color: $blue;
+      color: var(--link-color);
     }
   }
 }
@@ -405,7 +458,7 @@ nav {
 
 .posts > .post {
   padding-bottom: 1em;
-  border-bottom: 1px solid $lightGray;
+  border-bottom: 1px solid var(--light-border-color);
 }
 
 .posts > .post:last-child {
@@ -416,9 +469,9 @@ nav {
 .post {
   blockquote {
     margin: 1.8em .8em;
-    border-left: 2px solid $gray;
+    border-left: 2px solid var(--light-border-color);
     padding: 0.1em 1em;
-    color: $gray;
+    color: var(--main-text-color);
     font-size: 22px;
     font-style: italic;
   }
@@ -435,9 +488,9 @@ nav {
 
 .wrapper-footer {
   margin-top: 1em;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  background-color: $lightGray;
+  border-top: 1px solid var(--second-border-color);
+  // border-bottom: 1px solid #ddd;
+  background-color: var(--box-background-color);
 }
 
 .footer-links {
@@ -453,8 +506,8 @@ hr {
   border: none;
   height: 1px;
   /* Set the hr color */
-  color: $lightGray; /* old IE */
-  background-color: $lightGray; /* Modern Browsers */
+  color: var(--light-border-color); /* old IE */
+  background-color: var(--light-border-color); /* Modern Browsers */
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS

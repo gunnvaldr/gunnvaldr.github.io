@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      const theme = localStorage.getItem('theme');
+      if (theme === "dark") {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    </script>
     <!-- <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title> -->
 
     {% include meta.html %}
@@ -26,6 +32,9 @@
 
   <body>
     <div class="wrapper-masthead">
+      <div class="mode-switcher">
+        <button id="theme-toggle" onclick="modeSwitcher()" class="theme-switcher"></button>
+      </div>
       <div class="container">
         <header class="masthead clearfix">
           <a href="{{ site.baseurl }}/" aria-label="{{ site.name }}" class="site-avatar"><img alt="avatar" src="{{ site.avatar }}" /></a>
@@ -61,6 +70,35 @@
     {% include analytics.html %}
     <script src="/js/jquery.min.js"></script>
     {% include cookie-consent.html %}
+    <script>
+    const userPrefers = getComputedStyle(document.documentElement).getPropertyValue('content');	
 
+    if (theme === "dark") {
+      document.getElementById("theme-toggle").innerHTML = "Light Mode";
+    } else if (theme === "light") {
+      document.getElementById("theme-toggle").innerHTML = "Dark Mode";
+    } else if (userPrefers === "dark") {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      window.localStorage.setItem('theme', 'dark');
+      document.getElementById("theme-toggle").innerHTML = "Light Mode";
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      window.localStorage.setItem('theme', 'light');
+      document.getElementById("theme-toggle").innerHTML = "Dark Mode";
+    }
+
+    function modeSwitcher() {
+      const currentMode = document.documentElement.getAttribute('data-theme');
+      if (currentMode === "dark" || window.matchMedia("(prefers-color-scheme: dark").matches) {
+        document.documentElement.setAttribute('data-theme', 'light');
+        window.localStorage.setItem('theme', 'light');
+        document.getElementById("theme-toggle").innerHTML = "Dark Mode";
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        window.localStorage.setItem('theme', 'dark');
+        document.getElementById("theme-toggle").innerHTML = "Light Mode";
+      }
+    }
+  </script>
   </body>
 </html>
