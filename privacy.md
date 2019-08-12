@@ -12,4 +12,4 @@ This website uses Google Analytics. This happens only if you approve third party
 
 ### Disqus
 
-The comments on each post are provided by [Disqus](https://disqus.com). Please refer to their [privacy policy](https://help.disqus.com/en/articles/1717103-disqus-privacy-policy) for more information.
+The comments on each post are provided by [Disqus](https://disqus.com){:target="_blank"}. Please refer to their [privacy policy](https://help.disqus.com/en/articles/1717103-disqus-privacy-policy){:target="_blank"} for more information.
